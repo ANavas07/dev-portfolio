@@ -8,7 +8,7 @@ type MagicButtonProps = {
     otherClasses?: string
 }
 
-function MagicButton({title, icon, position, otherClasses, handleClick}: MagicButtonProps) {
+function MagicButton({ title, icon, position, otherClasses, handleClick }: MagicButtonProps) {
     return (
         //rounded-lg instead of rounded-full
         <button className="relative inline-flex h-12 overflow-hidden rounded-lg p-[1px] focus:outline-none md:w-60 md:mt-10" onClick={handleClick}>
