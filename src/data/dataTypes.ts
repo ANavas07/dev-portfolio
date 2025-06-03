@@ -1,12 +1,15 @@
 export type NavItems = {
     name: string;
+    nameEs: string;
     link: string;
 };
 
 export type GridItemType = {
     id: number;
     title: string;
+    titleES: string;
     description: string;
+    descriptionES: string;
     className: string;
     imgClassName: string;
     titleClassName: string;
@@ -17,7 +20,9 @@ export type GridItemType = {
 export type ProjectType = {
     id: number;
     title: string;
+    titleES: string;
     description: string;
+    descriptionES: string;
     img: string;
     iconLists: string[];
     link: string;
@@ -26,7 +31,9 @@ export type ProjectType = {
 export type workExperienceType ={
     id: number;
     title: string;
+    titleES: string;
     description: string;
+    descriptionES: string;
     className: string;
     thumbnail: string;
 };
@@ -42,3 +49,10 @@ export type CompaniesType = {
     img: string;
     nameImg: string;
 };
+
+export type ApproachType = {
+    title: string;
+    titleES: string;
+    description: string;
+    descriptionES: string;
+}

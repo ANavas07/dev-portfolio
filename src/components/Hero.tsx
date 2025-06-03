@@ -1,10 +1,16 @@
+'use client'
 import { Spotlight } from './ui/Spotlight'
 import { cn } from "@/lib/utils";
 import { TextGenerateEffect } from './ui/textGenerateEffect';
 import MagicButton from './ui/MagicButton';
 import { FaLocationArrow } from 'react-icons/fa';
+import { heroText } from '@/data';
+import { useLanguage } from '@/hooks/LanguageContext';
 
 const Hero = () => {
+    const {language} = useLanguage();
+    const {description,descriptionES,shortTitle,shortTitleES,title,titleES} = heroText;
+
     return (
         <div className='pt-5'>
             <div>
@@ -24,19 +30,17 @@ const Hero = () => {
                 />
                 <div className='flex justify-center relative my-20 z-10'>
                     <div className='max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center'>
-                        <h2 className='uppercase tracking-widest text-xs text-center text-blue-100'>Dinamic Web Magic</h2>
-                        <TextGenerateEffect className='text-center text-[40px] md:text-5xl lg:text-6xl' words='Bringing your imagination to life.' />
+                        <h2 className='uppercase tracking-widest text-xs text-center text-blue-100'>{language==='EN' ? shortTitle: shortTitleES}</h2>
+                        <TextGenerateEffect key={language} className='text-center text-[40px] md:text-5xl lg:text-6xl' words={language==='EN' ? title : titleES} />
                         <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl'>
-                            Hi I&apos;m Ariel FullStack developer
+                            {language==='EN' ? description : descriptionES}
                         </p>
 
                         <a href="#about">
-                            <MagicButton title='View my job' icon={<FaLocationArrow/>} position='right' />
+                            <MagicButton title={language==='EN' ? 'View my job': 'Mira mi trabajo'} icon={<FaLocationArrow/>} position='right' />
                         </a>
-
                     </div>
                 </div>
-
             </div>
         </div>
     )

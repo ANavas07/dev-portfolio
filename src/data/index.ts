@@ -1,29 +1,62 @@
-import { CompaniesType, GridItemType, NavItems, ProjectType, SocialMediaType, workExperienceType } from "./dataTypes";
+import { title } from "process";
+import { ApproachType, CompaniesType, GridItemType, NavItems, ProjectType, SocialMediaType, workExperienceType } from "./dataTypes";
 
 
+//Hero section
+export const heroText = {
+    shortTitle: "Welcome!",
+    title: "Turning ideas into powerful digital solutions.",
+    description: "Hi, I'm Ariel — a fun-loving Full-Stack Developer 😎",
+    shortTitleES: "¡Bienvenido!",
+    titleES: "Convirtiendo ideas en potentes soluciones digitales.",
+    descriptionES: "Hola, soy Ariel — un Desarrollador Full-Stack divertido 😎",
+}
+
+//Projects section
+export const projectsText = {
+    title: "Here are some of the things",
+    lowTitle: "I’ve built lately.",
+    titleES: "Aquí hay algunas de las cosas",
+    lowTitleES: "que he construido últimamente.",
+}
+
+//Experience section
+export const experienceText = {
+    title: "My Work Experience",
+    titleES: "Mi Experiencia Laboral",
+};
+
+export const approachText = {
+    title: "My Approach",
+    titleES: "Mi Enfoque"
+}
 
 export const navItems: NavItems[] = [
-    { name: "About", link: "#about" },
-    { name: "Projects", link: "#projects" },
-    { name: "Experience", link: "#experience" },
-    { name: "Contact", link: "#contact" },
+    { name: "About", nameEs: "Acerca", link: "#about" },
+    { name: "Projects", nameEs: "Proyectos", link: "#projects" },
+    { name: "Experience", nameEs: "Experiencia", link: "#experience" },
+    { name: "Contact", nameEs: "Contacto", link: "#contact" },
 ];
 
 export const gridItems: GridItemType[] = [
     {
         id: 1,
-        title: "I prioritize client collaboration, fostering open communication ",
+        title: "I’m all ears — I believe good ideas can come from anywhere, and I’m always ready to learn and improve.",
+        titleES: "Estoy atento: creo que las buenas ideas pueden venir de cualquier parte y siempre estoy listo para aprender y mejorar.",
         description: "",
+        descriptionES: "",
         className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
-        imgClassName: "w-full h-full",
+        imgClassName: "lg:w-full lg:h-full ",
         titleClassName: "justify-end",
-        img: "/b1.svg",
+        img: "/gridJs.png",
         spareImg: "",
     },
     {
         id: 2,
-        title: "I'm very flexible with time zone communications",
+        title: "Time zones? No problem. I’m here to work and collaborate.",
+        titleES: "¿Zonas horarias? No hay problema. Estoy aquí para trabajar y colaborar.",
         description: "",
+        descriptionES: "",
         className: "lg:col-span-2 md:col-span-3 md:row-span-2",
         imgClassName: "",
         titleClassName: "justify-start",
@@ -33,7 +66,9 @@ export const gridItems: GridItemType[] = [
     {
         id: 3,
         title: "My tech stack",
-        description: "I constantly try to improve",
+        titleES: "Mi stack tecnológico",
+        description: "Improving with every step.",
+        descriptionES: "Mejorando en cada paso.",
         className: "lg:col-span-2 md:col-span-3 md:row-span-2",
         imgClassName: "",
         titleClassName: "justify-center",
@@ -42,8 +77,10 @@ export const gridItems: GridItemType[] = [
     },
     {
         id: 4,
-        title: "Tech enthusiast with a passion for development.",
+        title: "Tech lover. Code enthusiast. Problem solver. ",
+        titleES: "Amante de la tecnología. Entusiasta del código. Solucionador de problemas.",
         description: "",
+        descriptionES: "",
         className: "lg:col-span-2 md:col-span-3 md:row-span-1",
         imgClassName: "",
         titleClassName: "justify-start",
@@ -53,8 +90,10 @@ export const gridItems: GridItemType[] = [
 
     {
         id: 5,
-        title: "Currently building a JS Animation library",
+        title: "Learning DevOps — because great code deserves great infrastructure.",
+        titleES: "Aprendiendo DevOps — porque un gran código merece una gran infraestructura.",
         description: "The Inside Scoop",
+        descriptionES: "La primicia interna",
         className: "md:col-span-3 md:row-span-2",
         imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
         titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -63,8 +102,10 @@ export const gridItems: GridItemType[] = [
     },
     {
         id: 6,
-        title: "Do you want to start a project together?",
+        title: "Let me tell you a bit more about myself!",
+        titleES: "¡Déjame contarte un poco más sobre mí!",
         description: "",
+        descriptionES: "",
         className: "lg:col-span-2 md:col-span-3 md:row-span-1",
         imgClassName: "",
         titleClassName: "justify-center md:max-w-full max-w-60 text-center",
@@ -77,35 +118,43 @@ export const gridItems: GridItemType[] = [
 export const projects: ProjectType[] = [
     {
         id: 1,
-        title: "3D Solar System Planets to Explore",
-        description: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-        img: "/p1.svg",
-        iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-        link: "https://github.com/adrianhajdin?tab=repositories",
+        title: "EP-EMA Lighting Control",
+        titleES: "Control de Iluminación EP-EMA",
+        description: "Real-time vessel lighting monitoring for Ambato Wholesale Market",
+        descriptionES: "Monitoreo en tiempo real de iluminación para naves del Mercado Mayorista de Ambato",
+        img: "/epema.png",
+        iconLists: ["/flutter.svg", "/nodejs.svg", "/ts.svg", "/mysql.svg"],
+        link: "https://github.com/ANavas07/mayorista_app",
     },
     {
         id: 2,
-        title: "Yoom - Video Conferencing App",
-        description: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-        img: "/p2.svg",
-        iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-        link: "https://github.com/adrianhajdin/zoom-clone",
+        title: "Arcoral Foundation | Youth & Music",
+        titleES: "Fundación Arcoral | Jóvenes y Música",
+        description: "Non-profit empowering Ecuadorian youth through classical music education",
+        descriptionES: "Organización sin fines de lucro que transforma vidas mediante educación musical clásica",
+        img: "/arcoral.png",
+        iconLists: ["/wordpress.svg", "/mysql.svg", "/hostinger.svg"],
+        link: "https://arcoral.org/",
     },
     {
         id: 3,
-        title: "AI Image SaaS - Canva Application",
-        description: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-        img: "/p3.svg",
-        iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-        link: "https://github.com/adrianhajdin/ai_saas_app",
+        title: "ChaskiPass | Fleet Management SaaS",
+        titleES: "ChaskiPass | Gestión de Flotas SaaS",
+        description: "Bus fleet management platform with ticketing, routing and optimization tools",
+        descriptionES: "Plataforma de gestión de flotas con venta de pasajes, rutas y optimización",
+        img: "/chaskibackend.png",
+        iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/nodejs.svg", "/mysql.svg", "/vercel.svg"],
+        link: "https://github.com/ANavas07/ChaskiPass_Project",
     },
     {
         id: 4,
-        title: "Animated Apple Iphone 3D Website",
-        description: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-        img: "/p4.svg",
-        iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-        link: "https://github.com/adrianhajdin/iphone",
+        title: "Clarksburg Academy | Pre-K & Childcare",
+        titleES: "Clarksburg Academy | Preescolar y Guardería",
+        description: "Early education for children 6mo-5yrs in a nurturing environment",
+        descriptionES: "Educación infantil para niños de 6 meses a 5 años en entorno enriquecedor",
+        img: "/clarksburg.png",
+        iconLists: ["/wordpress.svg", "/mysql.svg", "/hostinger.svg"],
+        link: "https://clarksburgacademypre-kchildcare.com/",
     },
 ];
 
@@ -113,68 +162,83 @@ export const projects: ProjectType[] = [
 export const workExperience: workExperienceType[] = [
     {
         id: 1,
-        title: "Frontend Engineer Intern",
-        description: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+        title: "Systems Analyst & Developer",
+        titleES: "Analista de Sistemas y Desarrollador",
+        description: "Focused on designing, developing, and maintaining enterprise systems using SAP ABAP, supporting key business operations.",
+        descriptionES: "Enfocado en diseñar, desarrollar y mantener sistemas empresariales utilizando SAP ABAP, apoyando operaciones clave del negocio.",
         className: "md:col-span-2",
         thumbnail: "/exp1.svg",
     },
     {
         id: 2,
-        title: "Mobile App Dev - JSM Tech",
-        description: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-        className: "md:col-span-2", // change to md:col-span-2
+        title: "Web Developer",
+        titleES: "Desarrollador Web",
+        description: "Led the refactoring and enhancement of the university's official website using Joomla, improving performance, usability, and content management for key institutional areas.",
+        descriptionES: "Lideré el refactorizado y mejora del sitio web oficial de la universidad usando Joomla, mejorando el rendimiento, la usabilidad y la gestión de contenidos para áreas institucionales clave.",
+        className: "md:col-span-2",
         thumbnail: "/exp2.svg",
     },
     {
         id: 3,
-        title: "Freelance App Dev Project",
-        description: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-        className: "md:col-span-2", // change to md:col-span-2
-        thumbnail: "/exp3.svg",
-    },
-    {
-        id: 4,
-        title: "Lead Frontend Developer",
-        description: "Developed and maintained user-facing features using modern frontend technologies.",
+        title: "Full-Stack Developer",
+        titleES: "Desarrollador Full-Stack",
+        description: "Developed and implemented new functionalities in enterprise systems using Oracle technologies, improving operational efficiency and user experience for internal teams.",
+        descriptionES: "Desarrollé e implementé nuevas funcionalidades en sistemas empresariales utilizando tecnologías Oracle, mejorando la eficiencia operativa y la experiencia de usuario para equipos internos.",
         className: "md:col-span-2",
         thumbnail: "/exp4.svg",
-    },
+    }
 ];
 
 
 
-export const companies:CompaniesType[] = [
+export const companies: CompaniesType[] = [
     {
         id: 1,
-        name: "cloudinary",
-        img: "/cloud.svg",
-        nameImg: "/cloudName.svg",
+        name: "Plasticaucho Industrial S.A.",
+        img: "/plasti.svg",
+        nameImg: "/plastiName.svg",
     },
     {
         id: 2,
-        name: "appwrite",
-        img: "/app.svg",
-        nameImg: "/appName.svg",
+        name: "Empresa Eléctrica Ambato Regional Centro Norte S.A.",
+        img: "/eeasa.svg",
+        nameImg: "/eeasaName.svg",
     },
     {
         id: 3,
-        name: "HOSTINGER",
-        img: "/host.svg",
-        nameImg: "/hostName.svg",
-    },
-    {
-        id: 4,
-        name: "stream",
-        img: "/s.svg",
-        nameImg: "/streamName.svg",
-    },
-    {
-        id: 5,
-        name: "docker.",
-        img: "/dock.svg",
-        nameImg: "/dockerName.svg",
+        name: "Dirección de Comunicación y Relaciones Públicas, Universidad Técnica de Ambato",
+        img: "/uta.svg",
+        nameImg: "/utaName.svg",
     },
 ];
+
+export const approachTextData: ApproachType[] = [
+    {
+        title: "Strategist",
+        titleES: "Estratega",
+        description: "Designing actionable plans with clear milestones and measurable results",
+        descriptionES: "Creación de planes ejecutables con hitos claros y resultados medibles"
+    },
+    {
+        title: "Integrity-Based Leadership",
+        titleES: "Liderazgo con Honestidad",
+        description: "Leading with transparency and accountability at every project phase",
+        descriptionES: "Dirección con transparencia y responsabilidad en cada fase del proyecto"
+    },
+    {
+        title: "Precision Execution",
+        titleES: "Ejecución Precisa",
+        description: "Delivering 100% on-time results through meticulous time management",
+        descriptionES: "Resultados 100% puntuales mediante gestión meticulosa del tiempo"
+    }
+];
+
+export const footerText = {
+    title: "Ready to take your project to the next level?",
+    titleES: "¿Listo para llevar tu proyecto al siguiente nivel?",
+    description: "Reach out to me today and let's discuss how I can help you achieve your goals.",
+    descriptionES: "Contáctame hoy y hablemos sobre cómo puedo ayudarte a alcanzar tus objetivos.",
+}
 
 export const socialMedia: SocialMediaType[] = [
     {

@@ -1,19 +1,23 @@
+'use client'
 import React from 'react'
 import MagicButton from './ui/MagicButton'
 import { FaLocationArrow } from 'react-icons/fa'
-import { socialMedia } from '@/data'
+import { footerText, socialMedia } from '@/data'
+import { useLanguage } from '@/hooks/LanguageContext'
 
 const Footer = () => {
+
+    const {description,descriptionES,title,titleES} = footerText;
+    const {language} = useLanguage();
+
     return (
         <footer className='w-full pb-10 mb-[100px] md:mb-5' id='contact'>
-
-
             <div className='flex flex-col items-center'>
                 <h1 className='flex flex-col items-center text-4xl md:text-6xl font-bold bg-gradient-to-b from-gray-100 to-purple-400 bg-clip-text text-transparent
-                lg:max-w-[45vw]'>
-                    Ready to take your project to the next level?
+                lg:max-w-[50vw]'>
+                    {language === 'EN' ? title : titleES}
                 </h1>
-                <p className='text-white-200 md:mt-10 my-5 text-center'>Reach out to me today and let&apos;s discuss how I can help you achieve your goals.</p>
+                <p className='text-white-200 md:mt-10 my-5 text-center'>{language === 'EN' ? description : descriptionES}</p>
                 <a href="mailto:arielnavas05@gmail.com">
                     <MagicButton 
                     title="Let's get in touch"

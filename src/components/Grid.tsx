@@ -1,9 +1,13 @@
+'use client'
 import React from 'react'
 import { BentoGrid, BentoGridItem } from './ui/BentoGrid'
 import { gridItems } from '@/data'
+import { useLanguage } from '@/hooks/LanguageContext';
 
 
 function Grid() {
+    const {language} = useLanguage();
+
     return (
         <section id='about'>
             <BentoGrid>
@@ -11,12 +15,12 @@ function Grid() {
                     <BentoGridItem
                         id={item.id}
                         key={item.id}
-                        title={item.title}
-                        description={item.description} 
+                        title={language==='EN' ? item.title: item.titleES}
+                        description={language==='EN' ? item.description: item.descriptionES} 
                         className={item.className}
                         img = {item.img}
                         imgClassName={item.imgClassName}
-                        titleClassName={item.titleClassName}
+                        titleClassName={ item.titleClassName}
                         spareImg={item.spareImg}/>
                 ))}
             </BentoGrid>

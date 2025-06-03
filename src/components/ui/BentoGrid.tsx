@@ -2,13 +2,12 @@
 
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBgAnimation";
-import { GlobeDemo } from "./GridGlobe";
 import Lottie from "lottie-react";
 import { useState } from "react";
 import animationData from "@/data/confetti.json";
-import { presetsObj } from "@react-three/drei/helpers/environment-assets";
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
+import { useLanguage } from "@/hooks/LanguageContext";
 
 export const BentoGrid = ({
     className,
@@ -52,6 +51,8 @@ export const BentoGridItem = ({
 }) => {
 
     const [copied, setCopied] = useState(false);
+    const { language } = useLanguage();
+
     const handleCopy = () => {
         console.log('Dowloading my CV');
         //if it is a string copied
@@ -59,6 +60,7 @@ export const BentoGridItem = ({
         setCopied(true);
 
     }
+
 
     return (
         <div
@@ -109,30 +111,41 @@ export const BentoGridItem = ({
                         {title}
                     </div>
                     {/* </div> */}
-
-
-                    {/* {id === 2 && <GlobeDemo />} */}
+                    {id === 2 && (
+                        <div className="flex h-16 overflow-hidden relative">
+                            <img src="./dog.gif" alt="dog" className="size-16 md:size-20 object-cover rounded-lg absolute animate-move" />
+                        </div>
+                    )}
 
                     {id === 3 && (
                         <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-                            <div className="flex flex-col gap-3 lg:gap-8">
-                                {['React.js', 'Next.js', 'Tailwind CSS'].map((item) => (
-                                    <span key={item} className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg
+                            <div className="flex flex-col gap-3 ">
+                                {['React', 'Angular', 'Java'].map((item) => (
+                                    <span key={item} className="py-2 px-3 text-xs opacity-50 rounded-lg
                                 text-center bg-[#10132E]">
                                         {item}
                                     </span>
                                 ))}
                                 <span className="py-4 ox-3 rounded-lg text-center bg-[#10132e]" />
                             </div>
-                            <div className="flex flex-col gap-3 lg:gap-8">
+                            <div className="flex flex-col gap-3 ">
                                 <span className="py-4 ox-3 rounded-lg text-center bg-[#10132e]" />
 
-                                {['Vue.js', 'Tailwind', 'MongoDb'].map((item) => (
-                                    <span key={item} className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg
+                                {['Springboot', 'Node Js', 'Oracle'].map((item) => (
+                                    <span key={item} className="py-2  px-3 text-xs opacity-50 rounded-lg
                                 text-center bg-[#10132E]">
                                         {item}
                                     </span>
                                 ))}
+                            </div>
+                            <div className="flex flex-col gap-3 ">
+                                {['Sql Server', 'PHP', 'Docker'].map((item) => (
+                                    <span key={item} className="py-2  px-3 text-xs opacity-50 rounded-lg
+                                    text-center bg-[#10132E]">
+                                        {item}
+                                    </span>
+                                ))}
+                                <span className="py-4 ox-3 rounded-lg text-center bg-[#10132e]" />
                             </div>
                         </div>
                     )}
@@ -145,10 +158,9 @@ export const BentoGridItem = ({
                                     animationData={animationData} rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
                                 />
                             </div>
-
-                            <MagicButton 
-                                title= {copied ? 'Copied!' : 'Download my CV'}
-                                icon={<IoCopyOutline/>}
+                            <MagicButton
+                                title={copied ? 'Copied!' : language === 'EN' ? 'Download my CV' : 'Descargar mi CV'}
+                                icon={<IoCopyOutline />}
                                 position="left"
                                 otherClasses="!bg-[#161a31]"
                                 handleClick={() => handleCopy()}
