@@ -2,6 +2,7 @@
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import { FloatingNav } from '@/components/ui/FloatingNav';
+import { LaptopScroll } from '@/components/ui/LaptopScroll';
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 
@@ -45,6 +46,10 @@ export default function Home() {
 
         <Suspense fallback="Loading...">
           <Experience />
+        </Suspense>
+
+        <Suspense fallback="Loading ...">
+          <LaptopScroll />    
         </Suspense>
 
         <Suspense fallback="Loading ...">

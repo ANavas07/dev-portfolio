@@ -54,12 +54,16 @@ export const BentoGridItem = ({
     const { language } = useLanguage();
 
     const handleCopy = () => {
-        console.log('Dowloading my CV');
-        //if it is a string copied
-        //navigator.clipboard.writeText('ariel@gmail.com');
+        const cvURL = language === 'EN' ?
+        'https://utaedu-my.sharepoint.com/:b:/g/personal/anavas6516_uta_edu_ec/EaI1hBCSddZNpHUnVzUVicUBU9-2Rv_JzchN-QjdrtWoow?e=uZkhFF':
+        'https://utaedu-my.sharepoint.com/:b:/g/personal/anavas6516_uta_edu_ec/Ea3qTtrnZqhDrxvHcfQBpxMBLPtmnyrwWBcDV6y5obArIA?e=PMupiq'
+        const link = document.createElement('a');
+        link.href= cvURL;
+        link.target = '_blank';
+        link.download = `cv_Ariel_Navas_${language}.pdf`;
+        link.click();
         setCopied(true);
-
-    }
+    };
 
 
     return (
