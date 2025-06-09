@@ -17,9 +17,13 @@ const geistMono = Geist_Mono({
 
 // this layout is used for all pages in the app.
 export const metadata: Metadata = {
-  title: "Ariel Portfolio",
-  description: "Made with Love",
+  title: "Ariel Navas | Software Developer Portfolio",
+  description: "Explore the professional portfolio of Ariel Navas, a passionate software developer specializing in modern web technologies, clean code, and user-centric design.",
+  icons: {
+    icon: "/AN_favicon.ico",
+  },
 };
+
 
 export default function RootLayout({
   children,
