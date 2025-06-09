@@ -1,14 +1,12 @@
 "use client";
-import React, { use } from "react";
+import React from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { CanvasRevealEffect } from "./ui/CanvasRevealEffect";
-import { div } from "motion/react-client";
 import { useLanguage } from "@/hooks/LanguageContext";
 import { approachText, approachTextData } from "@/data";
 
 
 const Approach = () => {
-
     const { language } = useLanguage();
     const { title, titleES } = approachText;
     const a = approachTextData[0]
@@ -16,7 +14,7 @@ const Approach = () => {
     const c = approachTextData[2]
 
     return (
-        <section className="w-full py-20">
+        <section className="w-full py-20 mt-28 md:mt-[700px]" id="approach">
             <h1 className='flex flex-col items-center text-4xl md:text-6xl font-bold bg-gradient-to-b from-gray-100 to-red-400 bg-clip-text text-transparent'>
                 {language === 'EN' ? title : titleES}
             </h1>

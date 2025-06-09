@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { MotionValue, motion, useScroll, useTransform } from "motion/react";
 import { cn } from "@/lib/utils";
 import {
@@ -23,12 +23,11 @@ import { IconWorld } from "@tabler/icons-react";
 import { IconCommand } from "@tabler/icons-react";
 import { IconCaretLeftFilled } from "@tabler/icons-react";
 import { IconCaretDownFilled } from "@tabler/icons-react";
-
+import { useLanguage } from "@/hooks/LanguageContext";
+import { laptopSectionData } from "@/data";
 
 export const LaptopScroll = ({
-    src,
     showGradient,
-    title,
     badge,
 }: {
     src?: string;
@@ -43,6 +42,10 @@ export const LaptopScroll = ({
     });
 
     const [isMobile, setIsMobile] = useState(false);
+
+    // Use the language context to determine the current language
+    const {language} = useLanguage();
+    const {title:titleEN, titleES, imgLaptop}= laptopSectionData;
 
     useEffect(() => {
         if (window && window.innerWidth < 768) {
@@ -60,7 +63,7 @@ export const LaptopScroll = ({
         [0, 0.3],
         [0.6, isMobile ? 1 : 1.5],
     );
-    const translate = useTransform(scrollYProgress, [0, 1], [0, 1500]);
+    const translate = useTransform(scrollYProgress, [0, 1], [0, 1000]);
     const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0]);
     const textTransform = useTransform(scrollYProgress, [0, 0.3], [0, 100]);
     const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
@@ -68,7 +71,7 @@ export const LaptopScroll = ({
     return (
         <div
             ref={ref}
-            className="flex min-h-[200vh] shrink-0 scale-[0.35] transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-50 md:scale-100 md:py-80"
+            className="flex min-h-[20vh] md:min-h-[150vh] shrink-0 scale-[0.35] transform flex-col items-center justify-start py-0 sm:py [perspective:800px] sm:scale-50 md:scale-100 mt-0 md:mt-20 md:py-80"
         >
             <motion.h2
                 style={{
@@ -77,15 +80,12 @@ export const LaptopScroll = ({
                 }}
                 className="mb-20 text-center text-3xl font-bold text-neutral-800 dark:text-white"
             >
-                {title || (
-                    <span>
-                        This Macbook is built with Tailwindcss. <br /> No kidding.
-                    </span>
-                )}
+                {language === "EN" ? titleEN : titleES}
             </motion.h2>
             {/* Lid */}
             <Lid
-                src={src}
+                // src={src}
+                src={imgLaptop || "/screenshotGit.png"}
                 scaleX={scaleX}
                 scaleY={scaleY}
                 rotate={rotate}

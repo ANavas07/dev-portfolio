@@ -3,18 +3,19 @@ import { companies, experienceText, workExperience } from '@/data'
 import React from 'react'
 import { Button } from './ui/MovingBorder'
 import { useLanguage } from '@/hooks/LanguageContext';
+import Image from 'next/image'
 
 function Experience() {
     const {language} = useLanguage();
     const { title, titleES } = experienceText;
 
     return (
-        <div className='py-20' id='experience'>
+        <section className='py-20' id='experience'>
             <h1 className='flex flex-col items-center text-4xl md:text-6xl font-bold bg-gradient-to-b from-gray-100 to-blue-400 bg-clip-text text-transparent'>
                 {language === 'EN' ? title : titleES}
             </h1>
             <div className='w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10 '>
-                {workExperience.map(({ id, className, description, thumbnail, title, descriptionES, titleES }) => (
+                {workExperience.map(({ id, description, thumbnail, title, descriptionES, titleES }) => (
                     <Button
                         key={id}
                         duration={Math.floor(Math.random() * 10000) + 10000}
@@ -44,7 +45,7 @@ function Experience() {
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     )
 }
 

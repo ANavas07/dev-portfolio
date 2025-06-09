@@ -10,7 +10,16 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  ...compat.config({
+    extends: ['next', 'prettier'],
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off', // Permite 'any'
+      '@next/next/no-img-element': 'off' // Opcional: Si también quieres permitir <img>
+    }
+  }),
+]
+/*const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
-];
+];*/
 
 export default eslintConfig;

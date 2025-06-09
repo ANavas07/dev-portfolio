@@ -2,13 +2,14 @@
 import { navItems } from "@/data";
 import React, { useEffect, useState } from "react";
 import LanguageSelector from "./LanguageSelector";
-import { IoMenuSharp } from "react-icons/io5";
 import Hamburger from "hamburger-react";
 import { useLanguage } from "@/hooks/LanguageContext";
 
 export const FloatingNav = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const {language} = useLanguage();
+    const [activeSection, setActiveSection] = useState<string>("");
+
 
     const handleMobileNavClick = (link: string) => {
         setIsMobileMenuOpen(false);
@@ -27,6 +28,39 @@ export const FloatingNav = () => {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    // Detectar la sección activa al hacer scroll
+    useEffect(() => {
+        const sections = document.querySelectorAll("section[id]");
+        
+        const callback = (entries: IntersectionObserverEntry[]) => {
+            entries.forEach(entry =>{
+                if(entry.isIntersecting){
+                    const id = entry.target.getAttribute("id");
+                    console.log("Active section:", id);
+                    if (id) setActiveSection(`#${id}`);
+                }
+            })
+        };
+
+        const observer = new IntersectionObserver(callback, {
+            root: null,
+            rootMargin: "0px",
+            threshold: [0.1, 0.25, 0.5, 0.75, 1.0],
+        });
+
+        sections.forEach((section) => {
+            console.log("Observing section:", section.id);
+            observer.observe(section);
+        })
+
+        return () => {
+            sections.forEach((section) => {
+                observer.unobserve(section);
+            });
+        };
+
+    }, []);
+
     return (
         <>
             {/* <header className="fixed top-0 left-1/2 -translate-x-1/2 z-[1000] mx-auto mt-2 w-auto"> */}
@@ -41,7 +75,8 @@ export const FloatingNav = () => {
                                 key={index}
                                 href={link.toString()}
                                 aria-label={name}
-                                className="relative block px-2 py-2 transition hover:text-blue-400 dark:hover:text-blue-500"
+                                className={`relative block px-2 py-2 transition hover:text-blue-400 dark:hover:text-blue-500
+                                ${activeSection === link ? "text-blue-400 dark:text-blue-500 font-bold" : ""}`}
                             >
                                 {language === 'EN' ? name : nameEs}
                             </a>

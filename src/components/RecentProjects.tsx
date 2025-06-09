@@ -2,7 +2,6 @@
 import { projects, projectsText } from '@/data'
 import React from 'react'
 import { PinContainer } from './ui/3d-pin'
-import { desc, div } from 'motion/react-client'
 import { FaLocationArrow } from 'react-icons/fa'
 import { useLanguage } from '@/hooks/LanguageContext'
 
@@ -11,7 +10,7 @@ const RecentProjects = () => {
     const {title, titleES, lowTitle, lowTitleES} = projectsText;
 
     return (
-        <div className='py-20' id='projects'>
+        <section className='py-20' id='projects'>
             <h1 className='flex flex-col items-center text-4xl md:text-6xl font-bold bg-gradient-to-b from-gray-100 to-purple-400 bg-clip-text text-transparent'>
                 {language === 'EN' ? title:titleES} {' '}
                 <span className='text-purple'>{language === 'EN' ? lowTitle : lowTitleES}</span>
@@ -53,7 +52,7 @@ const RecentProjects = () => {
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     )
 }
 

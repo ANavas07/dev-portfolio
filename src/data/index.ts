@@ -1,15 +1,13 @@
-import { title } from "process";
 import { ApproachType, CompaniesType, GridItemType, NavItems, ProjectType, SocialMediaType, workExperienceType } from "./dataTypes";
-
 
 //Hero section
 export const heroText = {
     shortTitle: "Welcome!",
     title: "Turning ideas into powerful digital solutions.",
-    description: "Hi, I'm Ariel — a fun-loving Full-Stack Developer 😎",
+    description: "Hi, I’m Ariel. I build stuff and enjoy the chaos. 🚀",
     shortTitleES: "¡Bienvenido!",
     titleES: "Convirtiendo ideas en potentes soluciones digitales.",
-    descriptionES: "Hola, soy Ariel — un Desarrollador Full-Stack divertido 😎",
+    descriptionES: "Hola, soy Ariel. Desarrollo cosas y me divierto haciéndolo. ✌️",
 }
 
 //Projects section
@@ -212,6 +210,12 @@ export const companies: CompaniesType[] = [
     },
 ];
 
+export const laptopSectionData={
+    title: "Check out my work on GitHub.",
+    titleES: "Échale un vistazo a mi GitHub.",
+    imgLaptop: "/screenshotGit.png",
+}
+
 export const approachTextData: ApproachType[] = [
     {
         title: "Strategist",
@@ -244,13 +248,16 @@ export const socialMedia: SocialMediaType[] = [
     {
         id: 1,
         img: "/git.svg",
+        link: "https://github.com/ANavas07"
     },
     {
         id: 2,
-        img: "/twit.svg",
+        img: "/insta.svg",
+        link: "https://www.instagram.com/alejandro.n7?igsh=MTJmM250a2Q0cXh3ZA=="
     },
     {
         id: 3,
         img: "/link.svg",
+        link: "https://www.linkedin.com/in/navasariel/"
     },
 ];

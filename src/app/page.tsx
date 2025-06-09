@@ -49,7 +49,7 @@ export default function Home() {
         </Suspense>
 
         <Suspense fallback="Loading ...">
-          <LaptopScroll />    
+          <LaptopScroll showGradient= {true}/>    
         </Suspense>
 
         <Suspense fallback="Loading ...">
