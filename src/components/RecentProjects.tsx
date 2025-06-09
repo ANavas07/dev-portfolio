@@ -11,9 +11,8 @@ const RecentProjects = () => {
 
     return (
         <section className='py-20' id='projects'>
-            <h1 className='flex flex-col items-center text-4xl md:text-6xl font-bold bg-gradient-to-b from-gray-100 to-purple-400 bg-clip-text text-transparent'>
-                {language === 'EN' ? title:titleES} {' '}
-                <span className='text-purple'>{language === 'EN' ? lowTitle : lowTitleES}</span>
+            <h1 className='flex flex-col items-center text-center text-4xl md:text-6xl font-bold bg-gradient-to-b from-gray-100 to-purple-400 bg-clip-text text-transparent'>
+                {language === 'EN' ? title:titleES} {' '} {language === 'EN' ? lowTitle : lowTitleES}
             </h1>
 
             <div className='flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10'>

@@ -36,7 +36,6 @@ export const FloatingNav = () => {
             entries.forEach(entry =>{
                 if(entry.isIntersecting){
                     const id = entry.target.getAttribute("id");
-                    console.log("Active section:", id);
                     if (id) setActiveSection(`#${id}`);
                 }
             })
@@ -49,7 +48,6 @@ export const FloatingNav = () => {
         });
 
         sections.forEach((section) => {
-            console.log("Observing section:", section.id);
             observer.observe(section);
         })
 
@@ -97,13 +95,13 @@ export const FloatingNav = () => {
                     // <div className="md:hidden fixed inset-0 z-[999] bg-slate-900/95 backdrop-blur-md">
                     <div className="md:hidden fixed inset-0 z-[999] bg-[linear-gradient(58deg,rgb(0_3_25)_0%,rgb(63_63_82)_47%,rgb(0_3_25)_100%)]">
                         <div className="flex flex-col items-center justify-center h-full space-y-8">
-                            {navItems.map(({ name, link }, index) => (
+                            {navItems.map(({ name, link, nameEs }, index) => (
                                 <button
                                     key={index}
                                     onClick={() => handleMobileNavClick(link)}
                                     className="text-xl font-medium text-gray-200 hover:text-blue-400 transition-colors duration-200 py-2 px-8 rounded-full hover:bg-slate-800/50"
                                 >
-                                    {name}
+                                    {language === 'EN' ? name : nameEs}
                                 </button>
                             ))}
                             <LanguageSelector />
