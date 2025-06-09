@@ -1,7 +1,7 @@
 # 🧑‍💻 Ariel Navas – Developer Portfolio
 
 Welcome to my personal developer portfolio!  
-This site was built using **Next.js**, styled with **Tailwind CSS**, and designed with **Asternity UI**, a component library focused on elegant and accessible interfaces.
+This site was built using **Next.js**, styled with **Tailwind CSS**, and designed with **Aceternity UI**, a component library focused on elegant and accessible interfaces.
 
 It showcases my skills, projects, and the technologies I work with. More than just a resume, it's a live reflection of my growth as a software engineer.
 
@@ -20,7 +20,7 @@ It showcases my skills, projects, and the technologies I work with. More than ju
 |----------------|---------------------------------|
 | **Next.js**    | React framework for SSR & SEO   |
 | **Tailwind CSS** | Utility-first CSS styling     |
-| **Asternity UI** | UI component library          |
+| **Aceternity UI** | UI component library          |
 | **Vercel**     | Deployment & CI/CD              |
 | **TypeScript** | (Optional) static typing        |
 
@@ -33,7 +33,7 @@ It showcases my skills, projects, and the technologies I work with. More than ju
 - 📫 Contact form or email link  
 - 🧰 Skills & tech stack with dynamic icons  
 - 📱 Fully responsive layout  
-- 🌙 Light/Dark mode (if enabled in Asternity UI)  
+- 🌙 Light/Dark mode (if enabled in Aceternity UI)  
 
 ---
 
