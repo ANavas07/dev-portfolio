@@ -9,8 +9,7 @@ It showcases my skills, projects, and the technologies I work with. More than ju
 
 ## 🔗 Live Demo
 
-👉 [Visit the Portfolio](https://yourdomain.com)  
-*(Replace with your actual domain or Vercel link)*
+👉 [Visit the Portfolio](https://dev-portfolio-blue-five.vercel.app/)  
 
 ---
 
