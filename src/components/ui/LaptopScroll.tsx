@@ -44,8 +44,8 @@ export const LaptopScroll = ({
     const [isMobile, setIsMobile] = useState(false);
 
     // Use the language context to determine the current language
-    const {language} = useLanguage();
-    const {title:titleEN, titleES, imgLaptop}= laptopSectionData;
+    const { language } = useLanguage();
+    const { title: titleEN, titleES, imgLaptop } = laptopSectionData;
 
     useEffect(() => {
         if (window && window.innerWidth < 768) {
@@ -165,11 +165,14 @@ export const Lid = ({
                 className="absolute inset-0 h-96 w-[32rem] rounded-2xl bg-[#010101] p-2"
             >
                 <div className="absolute inset-0 rounded-lg bg-[#272729]" />
-                <img
-                    src={src as string}
-                    alt="aceternity logo"
-                    className="absolute inset-0 h-full w-full rounded-lg object-cover object-left-top"
-                />
+                <a href="https://github.com/ANavas07" target="_blank" rel="noopener noreferrer">
+                    <img
+                        src={src as string}
+                        alt="aceternity logo"
+                        className="absolute inset-0 h-full w-full rounded-lg object-cover object-left-top"
+
+                    />
+                </a>
             </motion.div>
         </div>
     );

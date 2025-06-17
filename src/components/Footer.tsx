@@ -7,7 +7,7 @@ import { useLanguage } from '@/hooks/LanguageContext'
 
 const Footer = () => {
 
-    const { description, descriptionES, title, titleES } = footerText;
+    const { description, descriptionES, title, titleES, btnText, btnTextES} = footerText;
     const { language } = useLanguage();
 
     return (
@@ -21,7 +21,7 @@ const Footer = () => {
                     <p className='text-white-200 md:mt-10 my-5 text-center'>{language === 'EN' ? description : descriptionES}</p>
                     <a href="mailto:arielnavas05@gmail.com">
                         <MagicButton
-                            title="Let's get in touch"
+                            title={language === 'EN' ? btnText : btnTextES}
                             icon={<FaLocationArrow />}
                             position="right" />
                     </a>

@@ -40,7 +40,7 @@ export const gridItems: GridItemType[] = [
     {
         id: 1,
         title: "I’m all ears — I believe good ideas can come from anywhere, and I’m always ready to learn and improve.",
-        titleES: "Estoy atento: creo que las buenas ideas pueden venir de cualquier parte y siempre estoy listo para aprender y mejorar.",
+        titleES: "Soy todo oídos! — Creo que las buenas ideas pueden venir de cualquier parte y siempre estoy listo para aprender y mejorar.",
         description: "",
         descriptionES: "",
         className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
@@ -122,17 +122,17 @@ export const projects: ProjectType[] = [
         descriptionES: "Monitoreo en tiempo real de iluminación para naves del Mercado Mayorista de Ambato",
         img: "/epema.png",
         iconLists: ["/flutter.svg", "/nodejs.svg", "/ts.svg", "/mysql.svg"],
-        link: "https://github.com/ANavas07/mayorista_app",
+        link: "Private repo",
     },
     {
         id: 2,
-        title: "Arcoral Foundation | Youth & Music",
-        titleES: "Fundación Arcoral | Jóvenes y Música",
-        description: "Non-profit empowering Ecuadorian youth through classical music education",
-        descriptionES: "Organización sin fines de lucro que transforma vidas mediante educación musical clásica",
-        img: "/arcoral.png",
+        title: "Osmopurif | Water Purification & Bottling Solutions",
+        titleES: "Osmopurif | Expertos en Agua Purificada y Equipos de Tratamiento",
+        description: "Specialists in bottled water, purification services, and water treatment equipment for homes and businesses.",
+        descriptionES: "Proveemos agua purificada, servicios de tratamiento y asesoría técnica para soluciones integrales en purificación.",
+        img: "/osmopurif.png",
         iconLists: ["/wordpress.svg", "/mysql.svg", "/hostinger.svg"],
-        link: "https://arcoral.org/",
+        link: "https://purificadoresecuador.com.ec/osmo/",
     },
     {
         id: 3,
@@ -242,6 +242,8 @@ export const footerText = {
     titleES: "¿Listo para llevar tu proyecto al siguiente nivel?",
     description: "Reach out to me today and let's discuss how I can help you achieve your goals.",
     descriptionES: "Contáctame hoy y hablemos sobre cómo puedo ayudarte a alcanzar tus objetivos.",
+    btnText: "Let's get in touch",
+    btnTextES: "Contactémonos",
 }
 
 export const socialMedia: SocialMediaType[] = [
