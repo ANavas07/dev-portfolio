@@ -55,8 +55,8 @@ export const BentoGridItem = ({
 
     const handleCopy = () => {
         const cvURL = language === 'EN' ?
-        'https://utaedu-my.sharepoint.com/:b:/g/personal/anavas6516_uta_edu_ec/EaI1hBCSddZNpHUnVzUVicUBU9-2Rv_JzchN-QjdrtWoow?e=uZkhFF':
-        'https://utaedu-my.sharepoint.com/:b:/g/personal/anavas6516_uta_edu_ec/Ea3qTtrnZqhDrxvHcfQBpxMBLPtmnyrwWBcDV6y5obArIA?e=PMupiq'
+        'https://drive.google.com/file/d/12zd7infcPA3HLwose9FLN59TK2O-IutD/view?usp=drive_link':
+        'https://drive.google.com/file/d/18fhSPSRLZWbCK4VuDQJKRoP4Dyj1RdTI/view?usp=sharing'
         const link = document.createElement('a');
         link.href= cvURL;
         link.target = '_blank';

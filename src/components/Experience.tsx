@@ -3,7 +3,6 @@ import { companies, experienceText, workExperience } from '@/data'
 import React from 'react'
 import { Button } from './ui/MovingBorder'
 import { useLanguage } from '@/hooks/LanguageContext';
-import Image from 'next/image'
 
 function Experience() {
     const {language} = useLanguage();
@@ -14,7 +13,7 @@ function Experience() {
             <h1 className='flex flex-col items-center text-center text-4xl md:text-6xl font-bold bg-gradient-to-b from-gray-100 to-blue-400 bg-clip-text text-transparent'>
                 {language === 'EN' ? title : titleES}
             </h1>
-            <div className='w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10 '>
+            <div className='w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10 z-10'>
                 {workExperience.map(({ id, description, thumbnail, title, descriptionES, titleES }) => (
                     <Button
                         key={id}
