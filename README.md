@@ -9,7 +9,7 @@ It showcases my skills, projects, and the technologies I work with. More than ju
 
 ## 🔗 Live Demo
 
-👉 [Visit the Portfolio](https://dev-portfolio-blue-five.vercel.app/)  
+👉 [Visit the Portfolio](https://www.dev-arielnavas.me/)  
 
 ---
 

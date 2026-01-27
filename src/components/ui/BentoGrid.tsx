@@ -55,8 +55,8 @@ export const BentoGridItem = ({
 
     const handleCopy = () => {
         const cvURL = language === 'EN' ?
-        'https://drive.google.com/file/d/12zd7infcPA3HLwose9FLN59TK2O-IutD/view?usp=drive_link':
-        'https://drive.google.com/file/d/18fhSPSRLZWbCK4VuDQJKRoP4Dyj1RdTI/view?usp=sharing'
+        'https://drive.google.com/file/d/1iz1vsTJqI8c4lcRhBSQB3hBI4HjYWlhO/view?usp=drive_link':
+        'https://drive.google.com/file/d/1adudYHmTz2fK3XSy3vyP_vyaCHYVPFHo/view?usp=drive_link'
         const link = document.createElement('a');
         link.href= cvURL;
         link.target = '_blank';
